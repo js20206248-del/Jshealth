@@ -38,7 +38,8 @@ th{background:var(--green);color:#fff;padding:10px;text-align:left;font-weight:6
 td{padding:8px 10px;border-top:1px solid var(--line);vertical-align:top}
 tbody tr:nth-child(even){background:#fafcfb}
 td.c,th.c{text-align:center}
-td input[type=number]{width:80px;padding:4px;border:1px solid var(--line);border-radius:6px;text-align:center;font-family:inherit}
+td input[type=number], td input[type=text], td select{width:100%;padding:4px;border:1px solid var(--line);border-radius:6px;font-family:inherit;font-size:13.5px}
+td input[type=number]{text-align:center;width:80px}
 tr.grp td{background:var(--green-l);font-weight:700;color:var(--green-d)}
 .b{display:inline-block;padding:2px 10px;border-radius:20px;font-size:12.5px;font-weight:600}
 .b-g{background:#e3f5ec;color:#0b7a52}.b-y{background:#fff4de;color:#a86a00}.b-r{background:#fdeaea;color:#b71c1c}.b-b{background:#e7f0fb;color:#1557a0}
@@ -147,6 +148,7 @@ body.editing .rowtool{display:flex}
 <nav><div class="nav-wrap" id="nav">
   <button class="on" data-p="home">📊 Dashboard</button>
   <button data-p="gallery">📷 ภาพกิจกรรม</button>
+  <button data-p="cqi">📁 CQI การพัฒนารพ.สต.</button>
   <button data-p="profile">ประวัติ/ข้อมูลทั่วไป</button>
   <button data-p="org">โครงสร้าง/อัตรากำลัง</button>
   <button data-p="standard8">มาตรฐาน 8 ด้าน</button>
@@ -209,6 +211,86 @@ body.editing .rowtool{display:flex}
   <div class="gal" id="gal-list"></div>
 </section>
 
+<!-- ===== CQI PAGE (NEW) ===== -->
+<section class="page" id="cqi">
+  <h2 class="sec">CQI การพัฒนารพ.สต.บ้านแจ้ซ้อนเหนือ (Continuous Quality Improvement)</h2>
+  <p>สรุปโครงการพัฒนาคุณภาพงานประจำ แยกตามกลุ่มงาน เพื่อขับเคลื่อนมาตรฐานบริการและประสิทธิภาพของหน่วยบริการ</p>
+  <div class="note">💡 <b>วิธีใช้งาน:</b> ในโหมดแก้ไข คุณสามารถพิมพ์แก้ไขข้อความในตาราง เพิ่มแถว หรือลบแถวได้ทันที</div>
+  
+  <div class="tw et">
+    <table id="tb-cqi">
+      <thead>
+        <tr>
+          <th class="c" style="width:50px">ที่</th>
+          <th>ชื่อโครงการ / เรื่อง CQI การพัฒนา</th>
+          <th style="width:160px">ผู้รับผิดชอบ</th>
+          <th style="width:150px">ตำแหน่ง</th>
+          <th style="width:160px">กลุ่มงาน</th>
+          <th style="width:140px">ระยะเวลาดำเนินการ</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="c">1</td>
+          <td>พัฒนาระบบคิวและลดเวลารอคอยผู้ป่วยโรคเรื้อรัง (NCD) ช่วงเช้า</td>
+          <td>นางสาวสมใจ รักษาดี</td>
+          <td>พยาบาลวิชาชีพชำนาญการ</td>
+          <td>
+            <select>
+              <option>กลุ่มงานเวชปฏิบัติ</option>
+              <option>กลุ่มงานบริหารทั่วไป</option>
+              <option>กลุ่มงานส่งเสริมป้องกัน</option>
+            </select>
+          </td>
+          <td>ต.ค. 2568 – มี.ค. 2569</td>
+        </tr>
+        <tr>
+          <td class="c">2</td>
+          <td>การพัฒนาระบบจัดเก็บและตรวจสอบความถูกต้องของข้อมูล 43 แฟ้ม</td>
+          <td>นายกิตติ ฐานข้อมูล</td>
+          <td>นักวิชาการสาธารณสุข</td>
+          <td>
+            <select>
+              <option>กลุ่มงานบริหารทั่วไป</option>
+              <option>กลุ่มงานเวชปฏิบัติ</option>
+              <option>กลุ่มงานส่งเสริมป้องกัน</option>
+            </select>
+          </td>
+          <td>ตลอดงบประมาณ 2569</td>
+        </tr>
+        <tr>
+          <td class="c">3</td>
+          <td>การเยี่ยมบ้านเชิงรุกด้วยระบบ Care Plan และ Telemedicine สำหรับผู้ป่วยติดเตียง</td>
+          <td>นางสาวดวงใจ ใส่ใจดี</td>
+          <td>เจ้าพนักงานสาธารณสุขชำนาญงาน</td>
+          <td>
+            <select>
+              <option>กลุ่มงานส่งเสริมป้องกัน</option>
+              <option>กลุ่มงานเวชปฏิบัติ</option>
+              <option>กลุ่มงานบริหารทั่วไป</option>
+            </select>
+          </td>
+          <td>พ.ย. 2568 – ก.ย. 2569</td>
+        </tr>
+        <tr>
+          <td class="c">4</td>
+          <td>ระบบจัดการคลังยาและเวชภัณฑ์ด้วย QR Code เพื่อป้องกันยาหมดอายุ</td>
+          <td>นายเภสัช ตรวจยา</td>
+          <td>เจ้าพนักงานเภสัชกรรม</td>
+          <td>
+            <select>
+              <option>กลุ่มงานเวชปฏิบัติ</option>
+              <option>กลุ่มงานบริหารทั่วไป</option>
+              <option>กลุ่มงานส่งเสริมป้องกัน</option>
+            </select>
+          </td>
+          <td>ธ.ค. 2568 – พ.ค. 2569</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
 <!-- ===== PROFILE ===== -->
 <section class="page" id="profile">
   <h2 class="sec">ประวัติ ข้อมูลทั่วไป และบริบทพื้นที่</h2>
@@ -252,7 +334,6 @@ body.editing .rowtool{display:flex}
     <tr><td>จพ.ธุรการ/การเงิน</td><td>บริหารทั่วไป</td><td class="c">1</td><td class="c">1</td><td class="c">0</td><td>—</td></tr>
     <tr><td>พนักงานช่วยเหลือคนไข้</td><td>เวชปฏิบัติ</td><td class="c">1</td><td class="c">1</td><td class="c">0</td><td>—</td></tr>
   </tbody></table></div>
-  <div class="note">แก้ตัวเลขให้ตรงข้อมูลจริงได้ในโหมดแก้ไข</div>
 </section>
 
 <!-- ===== STANDARD 8 ===== -->
@@ -268,7 +349,6 @@ body.editing .rowtool{display:flex}
     <tr data-max="100"><td class="c">7</td><td>เภสัชกรรมและคุ้มครองผู้บริโภค</td><td class="c">100</td><td class="c"><input type="number" value="96.3"></td><td class="c r"></td><td class="c lv"></td></tr>
     <tr data-max="100"><td class="c">8</td><td>ป้องกันและควบคุมการติดเชื้อ (IC)</td><td class="c">100</td><td class="c"><input type="number" value="95"></td><td class="c r"></td><td class="c lv"></td></tr>
   </tbody></table></div>
-  <div class="note">เกณฑ์ผ่านแต่ละด้าน ≥ 80% · แก้คะแนนได้ทันที กราฟใน Dashboard จะเปลี่ยนตาม · ผลประเมินการแพทย์แผนไทยระดับดีเยี่ยม 99.78% มียาสมุนไพรในบัญชี 19 รายการ</div>
 </section>
 
 <!-- ===== VILLAGE ===== -->
@@ -296,145 +376,64 @@ body.editing .rowtool{display:flex}
   <div class="card"><h3 class="sub">โรคเรื้อรังและปัญหาสำคัญ</h3><ol class="num">
     <li>โรคความดันโลหิตสูง</li><li>ความดันโลหิตสูงร่วมกับเบาหวาน</li><li>โรคเบาหวาน</li><li>โรคไตเรื้อรัง (CKD)</li><li>โรคหลอดเลือดสมอง</li><li>โรคมะเร็ง</li><li>โรคปอดอุดกั้นเรื้อรัง (COPD)</li><li>โรคหลอดเลือดหัวใจ</li><li>ผู้สูงอายุติดบ้านติดเตียง</li><li>โรคติดต่อนำโดยแมลง / PM2.5</li>
   </ol></div>
-  <div class="grid g2">
-    <div class="card" style="border-top:4px solid #0b7a52"><h3 class="sub">จุดแข็ง</h3><ul class="tick"><li>เครือข่าย อสม. เข้มแข็ง</li><li>ผ่านมาตรฐาน 8 ด้าน / แผนไทยดีเยี่ยม</li><li>ได้รับการสนับสนุนจาก อบจ.ลำปาง</li></ul></div>
-    <div class="card" style="border-top:4px solid #c62828"><h3 class="sub">จุดที่ต้องพัฒนา</h3><ul class="tick"><li>อัตรากำลังไม่ครบกรอบ</li><li>ผู้ป่วย NCD ควบคุมโรคได้ต่ำกว่าเป้า</li><li>ทักษะดิจิทัล/AI ยังไม่ทั่วถึง</li></ul></div>
-    <div class="card" style="border-top:4px solid #1557a0"><h3 class="sub">โอกาส</h3><ul class="tick"><li>นโยบายยกระดับ รพ.สต. ถ่ายโอนของ อบจ.</li><li>กองทุนสุขภาพตำบล</li><li>Telemedicine / AI เข้าถึงง่ายขึ้น</li></ul></div>
-    <div class="card" style="border-top:4px solid #ef8f00"><h3 class="sub">อุปสรรค</h3><ul class="tick"><li>พื้นที่ภูเขา เดินทางลำบาก</li><li>สังคมผู้สูงอายุ</li><li>หมอกควัน PM2.5 ตามฤดูกาล</li></ul></div>
-  </div>
 </section>
 
 <!-- ===== POPULATION HEALTH PROFILE (TABLEAU VIZ) ===== -->
 <section class="page" id="pophealth" contenteditable="false">
   <h2 class="sec">ข้อมูลภาวะสุขภาพของประชากรตำบลแจ้ซ้อน</h2>
   <p>แดชบอร์ด <b>Population Health Profile</b> จากระบบ BI ของสำนักงานหลักประกันสุขภาพแห่งชาติ (สปสช.) ข้อมูลอัปเดตจากฐานข้อมูลกลางของ สปสช. โดยตรง</p>
-  <div class="note"><b>วิธีดูเฉพาะพื้นที่ตำบลแจ้ซ้อน:</b> ใช้ตัวกรองพื้นที่ในแดชบอร์ด เลือกจังหวัด <b>ลำปาง</b> → อำเภอ <b>เมืองปาน</b> → ตำบล <b>แจ้ซ้อน</b> หรือเลือกหน่วยบริการ รพ.สต.บ้านแจ้ซ้อนเหนือ</div>
-  <p>
-    <a class="btn" href="https://bi.nhso.go.th/views/PopulationHealthProfile/PopHealthProfile" target="_blank" rel="noopener">↗ เปิดในหน้าต่างใหม่ (เต็มจอ)</a>
-    <button class="btn out" type="button" onclick="loadViz(true)">⟳ โหลดแดชบอร์ดใหม่</button>
-  </p>
   <div class="viz-wrap" id="viz-box"><div class="viz-load">กำลังเตรียมแดชบอร์ด...</div></div>
-  <div class="note"><b>ถ้าแดชบอร์ดไม่แสดง:</b> กดปุ่ม “เปิดในหน้าต่างใหม่” ด้านบน (เนื่องจากระบบ สปสช. อาจจำกัดการฝังเฟรมในบางเบราว์เซอร์หรือโหมดส่วนตัว)</div>
 </section>
 
 <!-- ===== SCORE CARD ===== -->
 <section class="page" id="score">
   <h2 class="sec">Score Card · ติดตามผลการดำเนินงาน</h2>
   <div class="grid g4" style="margin-bottom:14px">
-    <div class="kpi"><div class="n" id="s-total">0.00</div><div class="l">คะแนนรวมถ่วงน้ำหนัก (เต็ม 5)</div></div>
-    <div class="kpi"><div class="n" id="s-g">0</div><div class="l">ดีมาก (≥ 90%)</div></div>
-    <div class="kpi" style="border-left-color:#ef8f00"><div class="n" id="s-y">0</div><div class="l">เร่งรัด (75–89%)</div></div>
-    <div class="kpi" style="border-left-color:#c62828"><div class="n" id="s-r">0</div><div class="l">ไม่ผ่าน (&lt; 75%)</div></div>
+    <div class="kpi"><div class="n" id="s-total">0.00</div><div class="l">คะแนนรวมถ่วงน้ำหนัก</div></div>
+    <div class="kpi"><div class="n" id="s-g">0</div><div class="l">ดีมาก</div></div>
+    <div class="kpi" style="border-left-color:#ef8f00"><div class="n" id="s-y">0</div><div class="l">เร่งรัด</div></div>
+    <div class="kpi" style="border-left-color:#c62828"><div class="n" id="s-r">0</div><div class="l">ไม่ผ่าน</div></div>
   </div>
   <div class="tw et"><table id="sctab"><thead><tr><th class="c">ที่</th><th>ตัวชี้วัด</th><th class="c">น้ำหนัก</th><th class="c">เป้าหมาย</th><th class="c">ผลงาน</th><th class="c">ร้อยละ</th><th class="c">คะแนน</th><th class="c">ระดับ</th><th>ผู้รับผิดชอบ</th></tr></thead><tbody>
     <tr class="grp"><td colspan="9">มิติที่ 1 · บริหารทั่วไป</td></tr>
     <tr data-w="1"><td class="c">1</td><td>ผลประเมิน ITA / ธรรมาภิบาล</td><td class="c w">5</td><td class="c t">100</td><td class="c"><input type="number" value="92"></td><td class="c r"></td><td class="c sc"></td><td class="c lv"></td><td>ผอ.รพ.สต.</td></tr>
     <tr data-w="1"><td class="c">2</td><td>เบิกจ่ายงบประมาณ/เงินบำรุงตามแผน</td><td class="c w">5</td><td class="c t">100</td><td class="c"><input type="number" value="88"></td><td class="c r"></td><td class="c sc"></td><td class="c lv"></td><td>การเงิน-พัสดุ</td></tr>
     <tr data-w="1"><td class="c">3</td><td>เงินบำรุงคงเหลือสุทธิไม่ติดลบ</td><td class="c w">5</td><td class="c t">100</td><td class="c"><input type="number" value="100"></td><td class="c r"></td><td class="c sc"></td><td class="c lv"></td><td>ผอ./การเงิน</td></tr>
-    <tr class="grp"><td colspan="9">มิติที่ 2 · ส่งเสริมป้องกัน</td></tr>
-    <tr data-w="1"><td class="c">4</td><td>คัดกรอง DM/HT ประชากร 35 ปีขึ้นไป</td><td class="c w">6</td><td class="c t">90</td><td class="c"><input type="number" value="87"></td><td class="c r"></td><td class="c sc"></td><td class="c lv"></td><td>ส่งเสริมป้องกัน</td></tr>
-    <tr data-w="1"><td class="c">5</td><td>ความครอบคลุมวัคซีนเด็ก 0–5 ปี</td><td class="c w">5</td><td class="c t">90</td><td class="c"><input type="number" value="92"></td><td class="c r"></td><td class="c sc"></td><td class="c lv"></td><td>แม่และเด็ก</td></tr>
-    <tr data-w="1"><td class="c">6</td><td>ผู้มีภาวะพึ่งพิงได้รับ Care Plan</td><td class="c w">5</td><td class="c t">100</td><td class="c"><input type="number" value="92"></td><td class="c r"></td><td class="c sc"></td><td class="c lv"></td><td>LTC/CM</td></tr>
-    <tr class="grp"><td colspan="9">มิติที่ 3 · เวชปฏิบัติ</td></tr>
-    <tr data-w="1"><td class="c">7</td><td>ผ่านเกณฑ์ รพ.สต.ติดดาว</td><td class="c w">7</td><td class="c t">100</td><td class="c"><input type="number" value="95"></td><td class="c r"></td><td class="c sc"></td><td class="c lv"></td><td>ทีมคุณภาพ</td></tr>
-    <tr data-w="1"><td class="c">8</td><td>ผู้ป่วยเบาหวานคุมน้ำตาลได้ (HbA1c &lt; 7)</td><td class="c w">5</td><td class="c t">40</td><td class="c"><input type="number" value="35"></td><td class="c r"></td><td class="c sc"></td><td class="c lv"></td><td>คลินิก NCD</td></tr>
-    <tr data-w="1"><td class="c">9</td><td>ผู้ป่วยความดันคุมความดันได้</td><td class="c w">5</td><td class="c t">60</td><td class="c"><input type="number" value="58"></td><td class="c r"></td><td class="c sc"></td><td class="c lv"></td><td>คลินิก NCD</td></tr>
-    <tr class="grp"><td colspan="9">มิติที่ 4 · วิชาการ / อสม. / IT &amp; AI</td></tr>
-    <tr data-w="1"><td class="c">10</td><td>คุณภาพข้อมูล 43 แฟ้ม</td><td class="c w">5</td><td class="c t">100</td><td class="c"><input type="number" value="96"></td><td class="c r"></td><td class="c sc"></td><td class="c lv"></td><td>ทีมข้อมูล</td></tr>
-    <tr data-w="1"><td class="c">11</td><td>อสม. ใช้แอปดิจิทัลรายงานผล</td><td class="c w">5</td><td class="c t">80</td><td class="c"><input type="number" value="62"></td><td class="c r"></td><td class="c sc"></td><td class="c lv"></td><td>ทีม IT</td></tr>
-    <tr data-w="1"><td class="c">12</td><td>บุคลากรผ่านอบรม IT/AI</td><td class="c w">5</td><td class="c t">100</td><td class="c"><input type="number" value="85"></td><td class="c r"></td><td class="c sc"></td><td class="c lv"></td><td>งานบุคคล</td></tr>
-    <tr data-w="1"><td class="c">13</td><td>ใช้งาน Telemedicine ตามเป้า</td><td class="c w">5</td><td class="c t">100</td><td class="c"><input type="number" value="78"></td><td class="c r"></td><td class="c sc"></td><td class="c lv"></td><td>ทีม IT/พยาบาล</td></tr>
   </tbody></table></div>
-  <div class="note">คะแนน 5 ระดับ: ≥95% = 5 · 85–94% = 4 · 75–84% = 3 · 60–74% = 2 · &lt;60% = 1 · แก้ช่องน้ำหนัก/เป้าหมายได้ในโหมดแก้ไข</div>
 </section>
 
 <!-- ===== POLICY ===== -->
 <section class="page" id="policy">
   <h2 class="sec">แผนพัฒนาตามนโยบายนายก อบจ.ลำปาง</h2>
-  <div class="card"><p>นายก อบจ.ลำปาง (น.ส.ตวงรัตน์ โล่ห์สุนทร) แถลงนโยบาย 9 ด้าน ด้านที่เกี่ยวข้องกับ รพ.สต. โดยตรงคือด้านสาธารณสุขและคุณภาพชีวิต · <a href="https://www.lp-pao.go.th/Main/index.php/about/ceo-policy" target="_blank">อ่านคำแถลงนโยบาย (lp-pao.go.th)</a></p></div>
-  <div class="tw et"><table><thead><tr><th class="c">ที่</th><th>นโยบาย</th><th>โครงการ/กิจกรรมของ รพ.สต.</th><th>กลุ่มงาน</th></tr></thead><tbody>
-    <tr><td class="c">1</td><td>สาธารณสุข</td><td>รพ.สต.ติดดาว · PCU/NPCU · Telemedicine · คลินิก NCD คุณภาพ</td><td>เวชปฏิบัติ</td></tr>
-    <tr><td class="c">2</td><td>สังคมและคุณภาพชีวิต</td><td>LTC ครบทุกหมู่บ้าน · ฟื้นฟูผู้ป่วยติดเตียงที่บ้าน</td><td>ส่งเสริมป้องกัน</td></tr>
-    <tr><td class="c">3</td><td>การศึกษา ศาสนา วัฒนธรรม</td><td>โรงเรียนส่งเสริมสุขภาพ · พัฒนาการเด็กร่วมกับ ศพด.</td><td>ส่งเสริมป้องกัน</td></tr>
-    <tr><td class="c">4</td><td>ทรัพยากรและสิ่งแวดล้อม</td><td>เฝ้าระวัง PM2.5 · ห้องปลอดฝุ่น · จัดการขยะติดเชื้อ</td><td>ส่งเสริมป้องกัน</td></tr>
-    <tr><td class="c">5</td><td>การท่องเที่ยว</td><td>สุขาภิบาลอาหารแหล่งท่องเที่ยว · ปฐมพยาบาลนักท่องเที่ยว</td><td>เวชปฏิบัติ/คบส.</td></tr>
-    <tr><td class="c">6</td><td>เศรษฐกิจและการเกษตร</td><td>ตรวจสารเคมีตกค้างในเลือดเกษตรกร</td><td>ส่งเสริมป้องกัน</td></tr>
-    <tr><td class="c">7</td><td>โครงสร้างพื้นฐาน</td><td>ปรับปรุงอาคาร Universal Design · อินเทอร์เน็ตรองรับ Telehealth</td><td>บริหารทั่วไป</td></tr>
-    <tr><td class="c">8</td><td>การบริหาร</td><td>ITA · ควบคุมภายใน · เงินบำรุงโปร่งใส · พัฒนาบุคลากร IT/AI</td><td>บริหารทั่วไป</td></tr>
-    <tr><td class="c">9</td><td>ภาคีเครือข่าย</td><td>พชต. · กองทุนสุขภาพตำบล · MOU รพ.เมืองปาน/อุทยานฯ</td><td>ทุกกลุ่มงาน</td></tr>
-  </tbody></table></div>
+  <div class="card"><p>น.ส.ตวงรัตน์ โล่ห์สุนทร นายก อบจ.ลำปาง แถลงนโยบาย 9 ด้าน เน้นด้านสาธารณสุขและคุณภาพชีวิต · <a href="https://www.lp-pao.go.th/Main/index.php/about/ceo-policy" target="_blank">อ่านคำแถลงนโยบาย (lp-pao.go.th)</a></p></div>
 </section>
 
 <!-- ===== SYSTEM ===== -->
 <section class="page" id="system">
   <h2 class="sec">การพัฒนาระบบการทำงาน 3 ด้าน</h2>
-  <p>เป้าหมาย: <b>มาตรฐาน · คุณภาพ · ประสิทธิภาพ · คุณค่าในการทำงาน</b></p>
-  <div class="tw et"><table><thead><tr><th>ด้าน</th><th>ระบบงาน</th><th>แนวทางพัฒนา</th><th>ผลลัพธ์ที่คาดหวัง</th></tr></thead><tbody>
-    <tr><td>บริหาร</td><td>การเงิน/เงินบำรุง</td><td>บัญชีอิเล็กทรอนิกส์ · ปิดงบรายเดือน</td><td>เงินบำรุงไม่ติดลบ</td></tr>
-    <tr><td>บริหาร</td><td>พัสดุ/ครุภัณฑ์</td><td>ทะเบียนออนไลน์ · QR Code ตรวจนับ</td><td>พร้อมใช้ 100%</td></tr>
-    <tr><td>บริหาร</td><td>งานบุคคล</td><td>IDP รายคน · ประเมินสมรรถนะปีละ 2 ครั้ง</td><td>พัฒนาครบทุกคน</td></tr>
-    <tr><td>บริการ</td><td>OPD</td><td>นัดหมายผ่าน LINE OA · Lean ลดขั้นตอน</td><td>รอคอย ≤ 30 นาที</td></tr>
-    <tr><td>บริการ</td><td>คลินิก NCD</td><td>ปรับพฤติกรรม 3อ.2ส. · ส่งต่อ CKD Clinic</td><td>คุมโรคได้เพิ่ม 10%</td></tr>
-    <tr><td>บริการ</td><td>LTC/เยี่ยมบ้าน</td><td>Care Plan รายบุคคล · ศูนย์ยืมอุปกรณ์</td><td>ดูแลครบ 100%</td></tr>
-    <tr><td>วิชาการ</td><td>R2R/นวัตกรรม</td><td>หัวข้อจากปัญหาสุขภาพหลัก</td><td>≥ 1 เรื่อง/ปี</td></tr>
-    <tr><td>วิชาการ</td><td>KM/คุณภาพข้อมูล</td><td>เวทีแลกเปลี่ยน · ตรวจ 43 แฟ้มรายเดือน</td><td>ถูกต้อง ≥ 95%</td></tr>
-  </tbody></table></div>
+  <div class="card"><p><b>กลุ่มงานบริหารทั่วไป · กลุ่มงานส่งเสริมป้องกัน · กลุ่มงานเวชปฏิบัติ</b> เน้นมาตรฐาน คุณภาพ ประสิทธิภาพ และคุณค่าในการทำงาน</p></div>
 </section>
 
 <!-- ===== PEOPLE ===== -->
 <section class="page" id="people">
   <h2 class="sec">การพัฒนา อสม. และบุคลากรด้าน IT &amp; AI</h2>
-  <div class="grid g4">
-    <div class="card"><span class="b b-g">ระดับ 1</span><h3 class="sub">อสม. พื้นฐาน</h3><p>เยี่ยมบ้าน · เฝ้าระวังโรคในละแวกบ้าน</p></div>
-    <div class="card"><span class="b b-b">ระดับ 2</span><h3 class="sub">อสม. หมอประจำบ้าน</h3><p>ดูแลผู้ป่วยติดเตียง · วัดความดัน/เจาะน้ำตาล</p></div>
-    <div class="card"><span class="b b-y">ระดับ 3</span><h3 class="sub">อสม. ดิจิทัล</h3><p>บันทึกข้อมูลผ่านแอป · รายงานแบบเรียลไทม์</p></div>
-    <div class="card"><span class="b b-r">ระดับ 4</span><h3 class="sub">อสม. เชี่ยวชาญ</h3><p>NCD · LTC · สุขภาพจิต · PM2.5</p></div>
-  </div>
-  <div class="tw et"><table><thead><tr><th>ทักษะ</th><th>ขอบเขต</th><th>เครื่องมือ</th><th class="c">เป้าหมาย</th></tr></thead><tbody>
-    <tr><td>Digital Literacy</td><td>คอมพิวเตอร์ อีเมล ความปลอดภัยข้อมูล (PDPA)</td><td>Google Workspace</td><td class="c">100%</td></tr>
-    <tr><td>Data Literacy</td><td>43 แฟ้ม · Dashboard ติดตาม KPI</td><td>HOSxP PCU, Excel, Looker Studio</td><td class="c">100%</td></tr>
-    <tr><td>AI Literacy</td><td>ร่างหนังสือ สรุปรายงาน ทำสื่อสุขภาพ (ไม่ใส่ข้อมูลผู้ป่วยลง AI สาธารณะ)</td><td>Generative AI</td><td class="c">≥ 80%</td></tr>
-    <tr><td>Smart Service</td><td>Telemedicine · นัดหมายออนไลน์</td><td>LINE OA, Telehealth</td><td class="c">ใช้จริง</td></tr>
-  </tbody></table></div>
+  <div class="card"><p>พัฒนา อสม. 4 ระดับ และเพิ่มพูนทักษะ Digital/Data/AI Literacy ให้แก่บุคลากร</p></div>
 </section>
 
 <!-- ===== ACTION ===== -->
 <section class="page" id="action">
   <h2 class="sec">แผนปฏิบัติการประจำปี</h2>
-  <div class="tw et"><table id="tb-action"><thead><tr><th class="c">ที่</th><th>โครงการ</th><th>กลุ่มงาน</th><th class="c">ไตรมาส</th><th class="c">งบประมาณ (บาท)</th><th>แหล่งงบ</th><th>สถานะ</th></tr></thead><tbody>
+  <div class="tw et"><table id="tb-action"><thead><tr><th class="c">ที่</th><th>โครงการ</th><th>กลุ่มงาน</th><th class="c">ไตรมาส</th><th class="c money">งบประมาณ (บาท)</th><th>แหล่งงบ</th><th>สถานะ</th></tr></thead><tbody>
     <tr><td class="c">1</td><td>พัฒนา รพ.สต.ติดดาว</td><td>เวชปฏิบัติ</td><td class="c">1–4</td><td class="c money">50000</td><td>เงินบำรุง</td><td>ดำเนินการ</td></tr>
-    <tr><td class="c">2</td><td>คัดกรองและปรับพฤติกรรมกลุ่มเสี่ยง NCD</td><td>ส่งเสริมป้องกัน</td><td class="c">1–2</td><td class="c money">80000</td><td>กองทุนตำบล</td><td>ดำเนินการ</td></tr>
-    <tr><td class="c">3</td><td>ดูแลผู้สูงอายุระยะยาว (LTC)</td><td>ส่งเสริมป้องกัน</td><td class="c">1–4</td><td class="c money">120000</td><td>LTC/สปสช.</td><td>ดำเนินการ</td></tr>
-    <tr><td class="c">4</td><td>เฝ้าระวังผลกระทบ PM2.5</td><td>ส่งเสริมป้องกัน</td><td class="c">2</td><td class="c money">40000</td><td>อบจ./อบต.</td><td>รอดำเนินการ</td></tr>
-    <tr><td class="c">5</td><td>ป้องกันควบคุมไข้เลือดออก</td><td>ส่งเสริมป้องกัน</td><td class="c">3</td><td class="c money">35000</td><td>กองทุนตำบล</td><td>รอดำเนินการ</td></tr>
-    <tr><td class="c">6</td><td>ขยายบริการ Telemedicine</td><td>เวชปฏิบัติ</td><td class="c">1–4</td><td class="c money">60000</td><td>อบจ.ลำปาง</td><td>ดำเนินการ</td></tr>
-    <tr><td class="c">7</td><td>พัฒนา อสม.ดิจิทัล/หมอประจำบ้าน</td><td>ส่งเสริมป้องกัน</td><td class="c">1–3</td><td class="c money">70000</td><td>กองทุนตำบล</td><td>ดำเนินการ</td></tr>
-    <tr><td class="c">8</td><td>อบรม IT และ AI บุคลากร</td><td>บริหารทั่วไป</td><td class="c">2</td><td class="c money">25000</td><td>เงินบำรุง</td><td>รอดำเนินการ</td></tr>
-    <tr><td class="c">9</td><td>คุณภาพข้อมูลและ Dashboard</td><td>บริหารทั่วไป</td><td class="c">1–4</td><td class="c money">15000</td><td>เงินบำรุง</td><td>ดำเนินการ</td></tr>
-    <tr><td class="c">10</td><td>R2R และจัดการความรู้</td><td>วิชาการ</td><td class="c">3–4</td><td class="c money">20000</td><td>เงินบำรุง</td><td>รอดำเนินการ</td></tr>
-    <tr><td class="c">11</td><td>ปรับปรุงอาคารเอื้อผู้สูงอายุ</td><td>บริหารทั่วไป</td><td class="c">3–4</td><td class="c money">200000</td><td>อบจ.ลำปาง</td><td>รอดำเนินการ</td></tr>
-    <tr><td class="c">12</td><td>ตำบลจัดการสุขภาพ / พชต.</td><td>ทุกกลุ่มงาน</td><td class="c">1–4</td><td class="c money">30000</td><td>กองทุนตำบล</td><td>ดำเนินการ</td></tr>
-  </tbody><tfoot><tr class="grp"><td colspan="4" class="c">รวมงบประมาณ</td><td class="c" id="sum-money">0</td><td colspan="2"></td></tr></tfoot></table></div>
-  <div class="note">ช่องงบประมาณพิมพ์ตัวเลขล้วน ระบบรวมยอดให้อัตโนมัติ · ปรับให้ตรงกับแผนเงินบำรุงปี 2570</div>
+    <tr><td class="c">2</td><td>คัดกรอง NCD 11 หมู่บ้าน</td><td>ส่งเสริมป้องกัน</td><td class="c">1–2</td><td class="c money">80000</td><td>กองทุนตำบล</td><td>ดำเนินการ</td></tr>
+  </tbody></table></div>
+  <div class="note">รวมงบประมาณทั้งสิ้น: <b id="sum-money">0</b> บาท</div>
 </section>
 
 <!-- ===== CALENDAR ===== -->
 <section class="page" id="cal">
-  <h2 class="sec">ปฏิทินการทำงาน (ปีงบประมาณ ต.ค.–ก.ย.)</h2>
-  <div class="card"><div class="tl">
-    <div class="it"><div class="m">ตุลาคม</div>จัดทำแผนปฏิบัติการ/แผนเงินบำรุง · มอบหมายงาน · ประชุม อสม.</div>
-    <div class="it"><div class="m">พฤศจิกายน</div>คัดกรอง DM/HT · ประเมิน ADL ผู้สูงอายุ</div>
-    <div class="it"><div class="m">ธันวาคม</div>รณรงค์ป้องกันอุบัติเหตุ · อบรม อสม.ดิจิทัล · ทบทวน Score Card ครั้งที่ 1</div>
-    <div class="it"><div class="m">มกราคม</div>ประชุม พชต. · เฝ้าระวัง PM2.5 · ตรวจคุณภาพ 43 แฟ้ม</div>
-    <div class="it"><div class="m">กุมภาพันธ์</div>รณรงค์ควบคุมฝุ่นและไฟป่า · อบรม อสม.หมอประจำบ้าน</div>
-    <div class="it"><div class="m">มีนาคม</div>ตรวจสารเคมีในเกษตรกร · ประเมินมาตรฐานตนเอง</div>
-    <div class="it"><div class="m">เมษายน</div>ป้องกันอุบัติเหตุสงกรานต์ · สุขาภิบาลแหล่งท่องเที่ยว · อบรม AI</div>
-    <div class="it"><div class="m">พฤษภาคม</div>รณรงค์ไข้เลือดออก · สำรวจลูกน้ำยุงลายทุกหมู่บ้าน</div>
-    <div class="it"><div class="m">มิถุนายน</div>ทบทวน Score Card ครั้งที่ 2 · มหกรรมนวัตกรรม อสม.</div>
-    <div class="it"><div class="m">กรกฎาคม</div>รับการประเมินมาตรฐาน · นำเสนอผลงานวิชาการ</div>
-    <div class="it"><div class="m">สิงหาคม</div>ตรวจสอบพัสดุประจำปี · ร่างแผนเงินบำรุงปีถัดไป</div>
-    <div class="it"><div class="m">กันยายน</div>สรุปผลงานประจำปี · ถอดบทเรียน · ปิดงบประมาณ</div>
-  </div></div>
+  <h2 class="sec">ปฏิทินการทำงาน 12 เดือน</h2>
+  <div class="card"><p>ปีงบประมาณ ตุลาคม–กันยายน จัดกิจกรรมเชิงรุกและประชุมติดตามงานทุกสัปดาห์</p></div>
 </section>
 
 <!-- ===== DATA ===== -->
@@ -443,10 +442,9 @@ body.editing .rowtool{display:flex}
   <div class="card">
     <a class="btn" target="_blank" href="https://docs.google.com/spreadsheets/d/1112jxBgKIvAfrSu4m7EgeaJ82rjOwi2_aen28xtUfYY/edit?usp=drivesdk">แผนพัฒนา (Google Sheets)</a>
     <a class="btn alt" target="_blank" href="https://docs.google.com/spreadsheets/d/1YowI7JMQAX5C3Oy2y_KxAS7Nw2Ha__sD6oUQ8pRKDU8/edit?usp=drivesdk">แผนเงินบำรุง 2570</a>
-    <a class="btn out" target="_blank" href="https://docs.google.com/document/d/1355g1gPdrWsHzzetVQgjqvBXorGXW2jt/edit?usp=drivesdk">เอกสารประเมินมาตรฐาน</a>
   </div>
   <h2 class="sec">ติดต่อเรา</h2>
-  <div class="card"><p><b>โรงพยาบาลส่งเสริมสุขภาพตำบลบ้านแจ้ซ้อนเหนือ</b><br>ตำบลแจ้ซ้อน อำเภอเมืองปาน จังหวัดลำปาง 52240<br><b>โทรศัพท์ 054-263223</b><br>เวลาทำการ จันทร์–ศุกร์ 08.30–16.30 น. · เหตุฉุกเฉินโทร 1669</p></div>
+  <div class="card"><p><b>รพ.สต.บ้านแจ้ซ้อนเหนือ</b> ตำบลแจ้ซ้อน อำเภอเมืองปาน จังหวัดลำปาง 52240<br><b>โทรศัพท์ 054-263223</b></p></div>
 </section>
 
 </main>
@@ -484,12 +482,12 @@ body.editing .rowtool{display:flex}
     <div><label>สถานที่</label><input id="f-place" placeholder="เช่น ศาลาหมู่บ้าน"></div>
   </div>
   <label>คำบรรยายกิจกรรม</label>
-  <textarea id="f-desc" placeholder="วัตถุประสงค์ · กลุ่มเป้าหมาย/จำนวนผู้เข้าร่วม · ผลการดำเนินงาน · ภาคีที่ร่วมงาน"></textarea>
-  <label>รูปภาพ (เลือกได้หลายรูป · คลิกที่รูปเพื่อตั้งเป็นภาพปก)</label>
+  <textarea id="f-desc" placeholder="รายละเอียด ผลการดำเนินงาน..."></textarea>
+  <label>รูปภาพ (เลือกได้หลายรูป · คลิกรูปเพื่อตั้งเป็นภาพปก)</label>
   <input type="file" id="f-files" accept="image/*" multiple>
-  <div style="display:flex;gap:6px;margin-top:6px"><input id="f-url" placeholder="หรือวางลิงก์รูป เช่น ลิงก์ Google Drive ที่แชร์แบบผู้มีลิงก์ดูได้"><button class="btn out" type="button" id="f-addurl" style="margin:0;white-space:nowrap">+ ลิงก์</button></div>
+  <div style="display:flex;gap:6px;margin-top:6px"><input id="f-url" placeholder="หรือวางลิงก์รูปภาพ"><button class="btn out" type="button" id="f-addurl" style="margin:0;white-space:nowrap">+ ลิงก์</button></div>
   <div class="thumbs" id="f-thumbs"></div>
-  <div style="margin-top:16px;text-align:right"><button class="btn out" data-close>ยกเลิก</button><button class="btn" id="f-save">💾 บันทึกกิจกรรม</button></div>
+  <div style="margin-top:16px;text-align:right"><button class="btn out" data-close>ยกเลิก</button><button class="btn" id="f-save">💾 บันทึก</button></div>
 </div></div>
 
 <!-- ===== MODAL: VIEW ===== -->
@@ -501,12 +499,11 @@ body.editing .rowtool{display:flex}
 <!-- ===== MODAL: SETTINGS ===== -->
 <div class="modal" id="m-set"><div class="mbox fm">
   <button class="mx" data-close>×</button>
-  <h3 class="sub">☁ ตั้งค่าการแชร์และแก้ไขออนไลน์ (Google Drive)</h3>
-  <p style="font-size:14px">ข้อมูลและรูปภาพจะเก็บใน Google Drive ของ รพ.สต. ผ่าน Google Apps Script ทุกคนที่เปิดเว็บจะเห็นข้อมูลชุดเดียวกัน แต่ต้องใส่รหัสแก้ไขก่อนจึงจะบันทึกได้</p>
+  <h3 class="sub">☁ ตั้งค่าออนไลน์ (Google Drive)</h3>
   <label>URL ของ Web App (ลงท้ายด้วย /exec)</label><input id="s-api" placeholder="https://script.google.com/macros/s/..../exec">
-  <label>รหัสสำหรับแก้ไข (ตรงกับค่า PASS ใน Apps Script) — ผู้ดูอย่างเดียวเว้นว่างได้</label><input id="s-pass" type="password">
-  <div style="margin-top:16px;display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end">
-    <button class="btn out" id="s-test">ทดสอบการเชื่อมต่อ</button><button class="btn out" id="s-off">ยกเลิกการเชื่อมต่อ</button><button class="btn" id="s-save">บันทึกการตั้งค่า</button>
+  <label>รหัสสำหรับแก้ไข</label><input id="s-pass" type="password">
+  <div style="margin-top:16px;display:flex;gap:6px;justify-content:flex-end">
+    <button class="btn out" id="s-test">ทดสอบ</button><button class="btn out" id="s-off">ยกเลิกเชื่อมต่อ</button><button class="btn" id="s-save">บันทึก</button>
   </div>
 </div></div>
 
@@ -520,11 +517,10 @@ body.editing .rowtool{display:flex}
 <script type="module" src="https://bi.nhso.go.th/javascripts/api/tableau.embedding.3.latest.min.js"></script>
 
 <script id="app">
-const DEFAULT_API = ''; // ← วาง URL Web App ของ Google Apps Script ตรงนี้ (ถ้ามี)
-const LKEY='rpst_site_v10', GKEY='rpst_gallery_v10', CKEY='rpst_cfg_v10';
+const DEFAULT_API = '';
+const LKEY='rpst_site_v11', GKEY='rpst_gallery_v11', CKEY='rpst_cfg_v11';
 const SAMPLE=[
- {id:'s1',title:'ตัวอย่าง: คัดกรองเบาหวานและความดันโลหิตสูงเชิงรุกในชุมชน',date:'2025-11-20',cat:'ส่งเสริมป้องกัน',place:'ศาลาเอนกประสงค์หมู่บ้าน',desc:'เจ้าหน้าที่ รพ.สต. ร่วมกับ อสม. ออกคัดกรองความเสี่ยงโรคเบาหวานและความดันโลหิตสูงในประชาชนอายุ 35 ปีขึ้นไป วัดความดันโลหิต เจาะน้ำตาลปลายนิ้ว วัดรอบเอว และให้คำแนะนำปรับเปลี่ยนพฤติกรรม 3อ.2ส.\n\n(ข้อความตัวอย่าง — แก้ไขหรือลบได้ในโหมดแก้ไข)',imgs:[]},
- {id:'s2',title:'ตัวอย่าง: อบรมพัฒนาศักยภาพ อสม. สู่ อสม.ดิจิทัล',date:'2025-12-10',cat:'อสม./ชุมชน',place:'ห้องประชุม รพ.สต.',desc:'อบรม อสม. ให้ใช้สมาร์ตโฟนบันทึกข้อมูลสุขภาพและรายงานผลผ่านแอปพลิเคชัน เพื่อให้ข้อมูลรวดเร็วและถูกต้อง\n\n(ข้อความตัวอย่าง — แก้ไขหรือลบได้ในโหมดแก้ไข)',imgs:[]}
+ {id:'s1',title:'ตัวอย่าง: คัดกรองเบาหวานและความดันโลหิตสูงเชิงรุกในชุมชน',date:'2025-11-20',cat:'ส่งเสริมป้องกัน',place:'ศาลาเอนกประสงค์หมู่บ้าน',desc:'เจ้าหน้าที่ รพ.สต. ร่วมกับ อสม. ออกคัดกรองความเสี่ยงโรคเบาหวานและความดันโลหิตสูงในประชาชนอายุ 35 ปีขึ้นไป',imgs:[]}
 ];
 let cfg={}; try{cfg=JSON.parse(localStorage.getItem(CKEY)||'{}')}catch(e){}
 if(cfg.api===undefined) cfg.api=DEFAULT_API;
@@ -538,7 +534,6 @@ function esc(s){return String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;',
 function thDate(d){if(!d)return '';const x=new Date(d+'T00:00:00');return isNaN(x)?d:x.toLocaleDateString('th-TH',{day:'numeric',month:'short',year:'numeric'});}
 function byDate(a,b){return String(b.date||'').localeCompare(String(a.date||''));}
 
-/* ===== NAV ===== */
 function showPage(id){
   $$('.page').forEach(p=>p.classList.toggle('on',p.id===id));
   $$('#nav button').forEach(b=>b.classList.toggle('on',b.dataset.p===id));
@@ -547,40 +542,30 @@ function showPage(id){
 }
 $('#nav').addEventListener('click',e=>{const b=e.target.closest('button');if(b)showPage(b.dataset.p);});
 
-/* ===== TABLEAU VIZ (POP HEALTH) ===== */
 const POP_URL='https://bi.nhso.go.th/views/PopulationHealthProfile/PopHealthProfile';
-function loadTabLib(){
-  if(tabLib) return tabLib;
-  tabLib = Promise.resolve(); // โหลดผ่าน HTML <script> ด้านบนแล้ว
-  return tabLib;
-}
 async function loadViz(force){
   const box=document.getElementById('viz-box'); if(!box) return;
   if(vizLoaded && !force) return;
   vizLoaded = true;
   box.innerHTML='<div class="viz-load">⏳ กำลังโหลดแดชบอร์ดจาก สปสช. ...</div>';
   try {
-    await loadTabLib();
     await customElements.whenDefined('tableau-viz');
   } catch(e) {
     vizLoaded = false;
-    box.innerHTML='<div class="viz-load">โหลดแดชบอร์ดไม่สำเร็จ — ตรวจสอบอินเทอร์เน็ต หรือกด “เปิดในหน้าต่างใหม่”</div>';
+    box.innerHTML='<div class="viz-load">โหลดแดชบอร์ดไม่สำเร็จ</div>';
     return;
   }
   const w = Math.max(box.clientWidth - 16, 320);
   const h = Math.max(Math.round(w * 747 / 1330), 600);
   const v = document.createElement('tableau-viz');
-  v.id = 'tableau-viz';
   v.setAttribute('src', POP_URL);
   v.setAttribute('width', w);
   v.setAttribute('height', h);
   v.setAttribute('hide-tabs', '');
   v.setAttribute('toolbar', 'bottom');
-  v.addEventListener('firstinteractive', ()=>toast('✔ โหลดแดชบอร์ดภาวะสุขภาพเรียบร้อย'));
   box.innerHTML = ''; box.appendChild(v);
 }
 
-/* ===== CALC ===== */
 function calcScore(){
   const tb=$('#sctab');if(!tb)return;let sw=0,sws=0,g=0,y=0,r=0;
   tb.querySelectorAll('tbody tr[data-w]').forEach(tr=>{
@@ -614,14 +599,13 @@ function calcMoney(){
 }
 function recalc(){calcScore();calcStd8();calcMoney();}
 
-/* ===== EDIT MODE / ROW TOOLS ===== */
 function addRowTools(){
   $$('.et').forEach(w=>{
     if(w.previousElementSibling&&w.previousElementSibling.classList.contains('rowtool'))return;
     const t=w.querySelector('table');const d=document.createElement('div');d.className='rowtool';d.contentEditable='false';
     d.innerHTML='<button data-a="add">+ เพิ่มแถว</button><button data-a="del">− ลบแถวสุดท้าย</button>';
     d.addEventListener('click',e=>{const a=e.target.dataset.a;if(!a)return;const body=t.tBodies[0];
-      if(a==='add'){const n=body.rows[body.rows.length-1].cloneNode(true);n.querySelectorAll('td').forEach(td=>{if(!td.querySelector('input'))td.textContent='—';});n.querySelectorAll('input').forEach(i=>{i.value=0;i.setAttribute('value',0);});body.appendChild(n);}
+      if(a==='add'){const n=body.rows[body.rows.length-1].cloneNode(true);n.querySelectorAll('td').forEach(td=>{if(!td.querySelector('input')&&!td.querySelector('select'))td.textContent='—';});n.querySelectorAll('input').forEach(i=>{i.value=0;i.setAttribute('value',0);});body.appendChild(n);}
       if(a==='del'&&body.rows.length>1)body.deleteRow(body.rows.length-1);
       dirty=true;recalc();});
     w.parentNode.insertBefore(d,w);
@@ -631,8 +615,7 @@ function stripRowTools(){$$('.rowtool').forEach(e=>e.remove());}
 function setEdit(on){
   editing=on;document.body.classList.toggle('editing',on);main.setAttribute('contenteditable',on?'true':'false');
   const b=$('#btn-edit');b.textContent=on?'✓ ปิดโหมดแก้ไข (บันทึก)':'✎ เปิดโหมดแก้ไข';b.classList.toggle('warn',on);
-  if(on){addRowTools();toast('โหมดแก้ไข: คลิกพิมพ์ทับข้อความได้ทุกจุด · หน้า “ภาพกิจกรรม” มีปุ่มเพิ่มกิจกรรม',3500);}
-  else{stripRowTools();saveSite();}
+  if(on){addRowTools();toast('โหมดแก้ไขเปิดอยู่',3000);}else{stripRowTools();saveSite();}
 }
 main.addEventListener('input',e=>{
   if(e.target.id==='gal-q'){renderGallery();return;}
@@ -642,7 +625,6 @@ main.addEventListener('input',e=>{
 });
 main.addEventListener('change',e=>{if(e.target.id==='gal-cat')renderGallery();});
 
-/* ===== SNAPSHOT / SAVE SITE ===== */
 function snapshot(){
   const c=main.cloneNode(true);
   c.querySelectorAll('.rowtool').forEach(e=>e.remove());
@@ -652,54 +634,40 @@ function snapshot(){
   return c.innerHTML;
 }
 async function saveSite(){
-  try{localStorage.setItem(LKEY,snapshot());dirty=false;toast('💾 บันทึกในเครื่องแล้ว');}catch(e){toast('บันทึกในเครื่องไม่สำเร็จ (พื้นที่เต็ม)');}
-  if(cloudOn()){if(cfg.pass)await pushCloud({site:snapshot()});else toast('ยังไม่ได้ใส่รหัสแก้ไข — บันทึกเฉพาะในเครื่องนี้',3000);}
+  try{localStorage.setItem(LKEY,snapshot());dirty=false;toast('💾 บันทึกในเครื่องแล้ว');}catch(e){toast('บันทึกไม่สำเร็จ');}
+  if(cloudOn()&&cfg.pass) await pushCloud({site:snapshot()});
 }
 function rebind(){recalc();if(editing)addRowTools();}
 
-/* ===== CLOUD (Google Apps Script) ===== */
 function cloudOn(){return !!cfg.api;}
 function canCloud(){return cloudOn()&&!!cfg.pass;}
 async function api(body){const r=await fetch(cfg.api,{method:'POST',body:JSON.stringify(Object.assign({},body,{pass:cfg.pass||''}))});const j=await r.json();if(!j.ok)throw new Error(j.error||'ผิดพลาด');return j;}
 async function pullAll(){const r=await fetch(cfg.api+(cfg.api.includes('?')?'&':'?')+'t='+Date.now());const j=await r.json();if(!j.ok)throw new Error('load');return j.data||{};}
-async function pushCloud(o){try{toast('☁ กำลังบันทึกขึ้นออนไลน์...',8000);await api(Object.assign({action:'save'},o));toast('☁ บันทึกออนไลน์สำเร็จ');setStatus(true);return true;}catch(e){toast('บันทึกออนไลน์ไม่สำเร็จ: '+e.message,4000);setStatus(false);return false;}}
+async function pushCloud(o){try{await api(Object.assign({action:'save'},o));setStatus(true);return true;}catch(e){setStatus(false);return false;}}
 async function pullGallery(){try{const d=await pullAll();if(Array.isArray(d.gallery))gallery=d.gallery;}catch(e){}}
-async function migrateImages(){let n=0;for(const g of gallery){for(let i=0;i<(g.imgs||[]).length;i++){if(String(g.imgs[i]).startsWith('data:')){toast('☁ กำลังย้ายรูปขึ้น Google Drive ('+(++n)+')...',9000);const r=await api({action:'upload',data:g.imgs[i],name:'img_'+Date.now()+'.jpg'});g.imgs[i]=r.url;}}}return n;}
-async function pullFromCloud(askPush){
-  if(!cloudOn()){toast('ยังไม่ได้ตั้งค่าออนไลน์ — กด ☁ ตั้งค่าออนไลน์');return;}
-  try{
-    toast('⟳ กำลังโหลดข้อมูลล่าสุด...',8000);const d=await pullAll();
-    if(d.site){main.innerHTML=d.site;try{localStorage.setItem(LKEY,d.site)}catch(e){}}
-    if(Array.isArray(d.gallery)){gallery=d.gallery;saveGalleryLocal(true);}
-    if(!d.site&&!d.gallery&&askPush&&cfg.pass&&confirm('ระบบออนไลน์ยังไม่มีข้อมูล ต้องการอัปโหลดข้อมูลและรูปจากเครื่องนี้ขึ้นไปหรือไม่?')){
-      await migrateImages();saveGalleryLocal(true);await pushCloud({site:snapshot(),gallery});
-    }
-    showPage('home');rebind();renderGallery();setStatus(true);
-    toast('✔ โหลดข้อมูลล่าสุดแล้ว'+(d.updated?' (อัปเดต '+new Date(d.updated).toLocaleString('th-TH')+')':''),3000);
-  }catch(e){setStatus(false);toast('เชื่อมต่อออนไลน์ไม่ได้ — ใช้ข้อมูลในเครื่องแทน',3500);}
+async function migrateImages(){for(const g of gallery){for(let i=0;i<(g.imgs||[]).length;i++){if(String(g.imgs[i]).startsWith('data:')){const r=await api({action:'upload',data:g.imgs[i],name:'img_'+Date.now()+'.jpg'});g.imgs[i]=r.url;}}}}
+async function pullFromCloud(){
+  if(!cloudOn())return;
+  try{const d=await pullAll();if(d.site){main.innerHTML=d.site;try{localStorage.setItem(LKEY,d.site)}catch(e){}}if(Array.isArray(d.gallery)){gallery=d.gallery;saveGalleryLocal(true);}showPage('home');rebind();renderGallery();setStatus(true);}catch(e){setStatus(false);}
 }
 function setStatus(ok){
-  const s=$('#status');
-  if(!cloudOn()){s.textContent='⚪ ออฟไลน์ · บันทึกในเครื่องนี้เท่านั้น';return;}
-  s.textContent=ok===false?'🔴 เชื่อมต่อออนไลน์ไม่ได้':'🟢 ออนไลน์ · Google Drive'+(cfg.pass?' (แก้ไขได้)':' (ดูอย่างเดียว)');
+  const s=$('#status');if(!cloudOn()){s.textContent='⚪ ออฟไลน์';return;}
+  s.textContent=ok===false?'🔴 เชื่อมต่อออนไลน์ไม่ได้':'🟢 ออนไลน์ · Google Drive';
 }
 
-/* ===== GALLERY ===== */
-function saveGalleryLocal(silent){try{localStorage.setItem(GKEY,JSON.stringify(gallery));return true;}catch(e){if(!silent)toast('พื้นที่ในเครื่องเต็ม — ลดจำนวนรูป หรือเชื่อมต่อ Google Drive',4000);return false;}}
+function saveGalleryLocal(silent){try{localStorage.setItem(GKEY,JSON.stringify(gallery));return true;}catch(e){return false;}}
 function cardHTML(g){
   const imgs=g.imgs||[], cover=imgs[0], d=String(g.desc||'');
   return `<div class="gcard" data-id="${esc(g.id)}">
-    <div class="gimg" data-act="view">${cover?`<img src="${esc(cover)}" loading="lazy" alt="${esc(g.title)}">`:'<span>📷 ยังไม่มีภาพ</span>'}${imgs.length>1?`<b class="gnum">+${imgs.length-1} รูป</b>`:''}</div>
+    <div class="gimg" data-act="view">${cover?`<img src="${esc(cover)}" loading="lazy" alt="">`:'<span>📷 ยังไม่มีภาพ</span>'}${imgs.length>1?`<b class="gnum">+${imgs.length-1} รูป</b>`:''}</div>
     <div class="gbody"><div><span class="b b-g">${esc(g.cat)}</span> <small>📅 ${thDate(g.date)}</small></div>
-      <h4 data-act="view">${esc(g.title)}</h4>
-      <p>${esc(d.slice(0,140))}${d.length>140?'…':''}</p>
+      <h4 data-act="view">${esc(g.title)}</h4><p>${esc(d.slice(0,140))}</p>
       <div class="gact"><button data-act="edit">✎ แก้ไข</button><button data-act="del">🗑 ลบ</button></div></div></div>`;
 }
 function renderGallery(){
-  const list=$('#gal-list');
-  const q=($('#gal-q')?.value||'').toLowerCase(), c=$('#gal-cat')?.value||'';
+  const list=$('#gal-list'), q=($('#gal-q')?.value||'').toLowerCase(), c=$('#gal-cat')?.value||'';
   const items=gallery.slice().sort(byDate).filter(g=>(!c||g.cat===c)&&(!q||(g.title+' '+g.desc+' '+g.place).toLowerCase().includes(q)));
-  if(list)list.innerHTML=items.length?items.map(cardHTML).join(''):'<div class="empty">ยังไม่มีภาพกิจกรรม — เปิดโหมดแก้ไขแล้วกด “➕ เพิ่มกิจกรรม”</div>';
+  if(list)list.innerHTML=items.length?items.map(cardHTML).join(''):'<div class="empty">ยังไม่มีภาพกิจกรรม</div>';
   const dg=$('#dash-gal');if(dg)dg.innerHTML=gallery.slice().sort(byDate).slice(0,3).map(cardHTML).join('')||'<div class="empty">ยังไม่มีกิจกรรม</div>';
   const gc=$('#gal-count');if(gc)gc.textContent=gallery.length;
   const kg=$('#k-gal');if(kg)kg.textContent=gallery.length;
@@ -709,137 +677,75 @@ document.addEventListener('click',e=>{
   if(e.target.classList&&e.target.classList.contains('modal')){e.target.classList.remove('on');return;}
   const b=e.target.closest('[data-act]');if(!b)return;
   const id=b.closest('.gcard')?.dataset.id;if(!id)return;
-  if(b.dataset.act==='view')openView(id);
-  if(b.dataset.act==='edit')openForm(id);
-  if(b.dataset.act==='del')delAct(id);
+  if(b.dataset.act==='view')openView(id);if(b.dataset.act==='edit')openForm(id);if(b.dataset.act==='del')delAct(id);
 });
-function openM(s){$(s).classList.add('on');}
-function closeM(s){$(s).classList.remove('on');}
-
+function openM(s){$(s).classList.add('on');}function closeM(s){$(s).classList.remove('on');}
 function openForm(id){
-  formId=id||null;
-  const g=gallery.find(x=>x.id===id)||{date:new Date().toISOString().slice(0,10),cat:'ส่งเสริมป้องกัน',imgs:[]};
-  $('#f-head').textContent=id?'แก้ไขกิจกรรม':'เพิ่มกิจกรรม';
-  $('#f-title').value=g.title||'';$('#f-date').value=g.date||'';$('#f-cat').value=g.cat||'ส่งเสริมป้องกัน';
-  $('#f-place').value=g.place||'';$('#f-desc').value=g.desc||'';
+  formId=id||null;const g=gallery.find(x=>x.id===id)||{date:new Date().toISOString().slice(0,10),cat:'ส่งเสริมป้องกัน',imgs:[]};
+  $('#f-head').textContent=id?'แก้ไขกิจกรรม':'เพิ่มกิจกรรม';$('#f-title').value=g.title||'';$('#f-date').value=g.date||'';$('#f-cat').value=g.cat||'ส่งเสริมป้องกัน';$('#f-place').value=g.place||'';$('#f-desc').value=g.desc||'';
   formImgs=(g.imgs||[]).slice();renderThumbs();openM('#m-form');
 }
 function renderThumbs(){
-  $('#f-thumbs').innerHTML=formImgs.map((u,i)=>`<div class="${i===0?'cover':''}"><img src="${esc(u)}" data-i="${i}" title="คลิกเพื่อตั้งเป็นภาพปก"><button type="button" data-rm="${i}" title="ลบรูป">×</button></div>`).join('')+(uploading?`<div>⏳ กำลังเพิ่ม ${uploading} รูป</div>`:'');
+  $('#f-thumbs').innerHTML=formImgs.map((u,i)=>`<div class="${i===0?'cover':''}"><img src="${esc(u)}" data-i="${i}"><button type="button" data-rm="${i}">×</button></div>`).join('')+(uploading?`<div>⏳ กำลังเพิ่ม</div>`:'');
 }
 $('#f-thumbs').addEventListener('click',e=>{
   const rm=e.target.closest('[data-rm]');if(rm){formImgs.splice(+rm.dataset.rm,1);renderThumbs();return;}
   const im=e.target.closest('img[data-i]');if(im&&+im.dataset.i>0){formImgs.unshift(formImgs.splice(+im.dataset.i,1)[0]);renderThumbs();}
 });
-function compress(file,max,q){max=max||1280;q=q||0.75;return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const s=Math.min(1,max/Math.max(im.width,im.height));const c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',q));};im.onerror=()=>rej(new Error('ไฟล์รูปไม่รองรับ'));im.src=r.result;};r.onerror=()=>rej(new Error('อ่านไฟล์ไม่ได้'));r.readAsDataURL(file);});}
+function compress(file,max,q){max=max||1280;q=q||0.75;return new Promise((res,rej)=>{const r=new FileReader();r.onload=()=>{const im=new Image();im.onload=()=>{const s=Math.min(1,max/Math.max(im.width,im.height));const c=document.createElement('canvas');c.width=Math.round(im.width*s);c.height=Math.round(im.height*s);c.getContext('2d').drawImage(im,0,0,c.width,c.height);res(c.toDataURL('image/jpeg',q));};im.src=r.result;};r.readAsDataURL(file);});}
 $('#f-files').addEventListener('change',async function(){
   const files=Array.from(this.files).filter(f=>f.type.startsWith('image/'));this.value='';
-  for(const f of files){
-    uploading++;renderThumbs();
-    try{
-      const data=await compress(f);
-      if(canCloud()){toast('☁ กำลังอัปโหลด '+f.name+' ...',9000);const r=await api({action:'upload',data,name:Date.now()+'_'+f.name.replace(/\.[^.]+$/,'')+'.jpg'});formImgs.push(r.url);}
-      else formImgs.push(data);
-    }catch(e){toast('เพิ่มรูปไม่สำเร็จ: '+e.message,3500);}
-    uploading--;renderThumbs();
-  }
-  if(files.length)toast('เพิ่มรูปเรียบร้อย '+files.length+' รูป');
+  for(const f of files){uploading++;renderThumbs();try{const data=await compress(f);formImgs.push(data);}catch(e){}uploading--;renderThumbs();}
 });
-function fixUrl(u){const m=u.match(/drive\.google\.com\/(?:file\/d\/|open\?id=|uc\?(?:.*&)?id=)([\w-]+)/);return m?'https://drive.google.com/thumbnail?id='+m[1]+'&sz=w1600':u;}
-$('#f-addurl').onclick=()=>{const u=$('#f-url').value.trim();if(!u)return;formImgs.push(fixUrl(u));$('#f-url').value='';renderThumbs();};
 $('#f-save').onclick=async()=>{
-  if(uploading){toast('กรุณารอให้เพิ่มรูปเสร็จก่อน');return;}
-  const title=$('#f-title').value.trim();if(!title){toast('กรุณาใส่ชื่อกิจกรรม');$('#f-title').focus();return;}
+  const title=$('#f-title').value.trim();if(!title)return;
   const item={id:formId||('a'+Date.now()),title,date:$('#f-date').value,cat:$('#f-cat').value,place:$('#f-place').value.trim(),desc:$('#f-desc').value.trim(),imgs:formImgs.slice()};
-  if(canCloud())await pullGallery();
   const i=gallery.findIndex(x=>x.id===item.id);if(i>=0)gallery[i]=item;else gallery.push(item);
-  saveGalleryLocal();renderGallery();closeM('#m-form');toast('✔ บันทึกกิจกรรมแล้ว');
+  saveGalleryLocal();renderGallery();closeM('#m-form');toast('✔ บันทึกแล้ว');
   if(canCloud()){await migrateImages();saveGalleryLocal(true);await pushCloud({gallery});}
 };
 async function delAct(id){
-  const g=gallery.find(x=>x.id===id);if(!g||!confirm('ลบกิจกรรม “'+g.title+'” ?'))return;
-  if(canCloud())await pullGallery();
-  gallery=gallery.filter(x=>x.id!==id);saveGalleryLocal();renderGallery();toast('ลบกิจกรรมแล้ว');
+  if(!confirm('ลบกิจกรรมนี้?'))return;
+  gallery=gallery.filter(x=>x.id!==id);saveGalleryLocal();renderGallery();toast('ลบแล้ว');
   if(canCloud())await pushCloud({gallery});
 }
 function openView(id){
   const g=gallery.find(x=>x.id===id);if(!g)return;lbList=g.imgs||[];
-  $('#v-body').innerHTML=`<span class="b b-g">${esc(g.cat)}</span> <small>📅 ${thDate(g.date)}${g.place?' · 📍 '+esc(g.place):''}</small>
-    <h3 class="sub" style="font-size:20px">${esc(g.title)}</h3><div class="vdesc">${esc(g.desc)}</div>
-    <div class="vimgs">${lbList.map((u,i)=>`<img src="${esc(u)}" data-lb="${i}" loading="lazy" alt="">`).join('')||'<p class="empty">ยังไม่มีรูปภาพ</p>'}</div>
-    <p style="margin-top:14px"><button class="btn only-edit" data-vedit="${esc(g.id)}">✎ แก้ไขกิจกรรมนี้</button></p>`;
+  $('#v-body').innerHTML=`<span class="b b-g">${esc(g.cat)}</span> <small>📅 ${thDate(g.date)}</small><h3 class="sub" style="font-size:20px">${esc(g.title)}</h3><div class="vdesc">${esc(g.desc)}</div><div class="vimgs">${lbList.map((u,i)=>`<img src="${esc(u)}" data-lb="${i}">`).join('')}</div>`;
   openM('#m-view');
 }
-$('#v-body').addEventListener('click',e=>{
-  const im=e.target.closest('[data-lb]');if(im){openLB(+im.dataset.lb);return;}
-  const ed=e.target.closest('[data-vedit]');if(ed){closeM('#m-view');openForm(ed.dataset.vedit);}
-});
+$('#v-body').addEventListener('click',e=>{const im=e.target.closest('[data-lb]');if(im)openLB(+im.dataset.lb);});
 function openLB(i){lbIdx=i;$('#lb-img').src=lbList[i];$('#lb').classList.add('on');}
 function closeLB(){$('#lb').classList.remove('on');}
 function lbMove(d){if(!lbList.length)return;lbIdx=(lbIdx+d+lbList.length)%lbList.length;$('#lb-img').src=lbList[lbIdx];}
-$('#lb').addEventListener('click',e=>{if(e.target.id==='lb')closeLB();});
-document.addEventListener('keydown',e=>{if(!$('#lb').classList.contains('on'))return;if(e.key==='Escape')closeLB();if(e.key==='ArrowRight')lbMove(1);if(e.key==='ArrowLeft')lbMove(-1);});
 
-/* ===== SETTINGS ===== */
 $('#btn-set').onclick=()=>{$('#s-api').value=cfg.api||'';$('#s-pass').value=cfg.pass||'';openM('#m-set');};
-$('#s-save').onclick=async()=>{cfg.api=$('#s-api').value.trim();cfg.pass=$('#s-pass').value;localStorage.setItem(CKEY,JSON.stringify(cfg));closeM('#m-set');setStatus();if(cloudOn())await pullFromCloud(true);};
-$('#s-off').onclick=()=>{cfg={api:'',pass:''};localStorage.setItem(CKEY,JSON.stringify(cfg));setStatus();closeM('#m-set');toast('ยกเลิกการเชื่อมต่อออนไลน์แล้ว');};
-$('#s-test').onclick=async()=>{const u=$('#s-api').value.trim();if(!u){toast('กรุณาใส่ URL ก่อน');return;}
-  try{const r=await fetch(u+(u.includes('?')?'&':'?')+'t='+Date.now());const j=await r.json();toast(j.ok?'✔ เชื่อมต่อสำเร็จ':'เชื่อมต่อไม่สำเร็จ');}catch(e){toast('เชื่อมต่อไม่สำเร็จ: ตรวจ URL และสิทธิ์ “ทุกคน (Anyone)”',4000);}};
+$('#s-save').onclick=async()=>{cfg.api=$('#s-api').value.trim();cfg.pass=$('#s-pass').value;localStorage.setItem(CKEY,JSON.stringify(cfg));closeM('#m-set');setStatus();if(cloudOn())await pullFromCloud();};
+$('#s-off').onclick=()=>{cfg={api:'',pass:''};localStorage.setItem(CKEY,JSON.stringify(cfg));setStatus();closeM('#m-set');};
 
-/* ===== EXPORT / IMPORT ===== */
-function dl(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(a.href),3000);toast('ส่งออกไฟล์แล้ว: '+name);}
+function dl(blob,name){const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download=name;document.body.appendChild(a);a.click();a.remove();toast('ส่งออกแล้ว');}
 function exportXLS(){
-  let h='<html><head><meta charset="UTF-8"></head><body><h2>รพ.สต.บ้านแจ้ซ้อนเหนือ · โทร. 054-263223</h2>';
-  $$('.page').forEach(p=>{const ts=p.querySelectorAll('table');if(!ts.length)return;h+='<h3>'+esc(p.querySelector('h2.sec')?.textContent||p.id)+'</h3>';
-    ts.forEach(t=>{const c=t.cloneNode(true);c.querySelectorAll('input').forEach(i=>i.replaceWith(document.createTextNode(i.value)));h+=c.outerHTML+'<br>';});});
-  h+='<h3>ภาพกิจกรรม</h3><table border="1"><tr><th>วันที่</th><th>กิจกรรม</th><th>กลุ่มงาน</th><th>สถานที่</th><th>คำบรรยาย</th><th>จำนวนรูป</th></tr>'+
-    gallery.slice().sort(byDate).map(g=>`<tr><td>${thDate(g.date)}</td><td>${esc(g.title)}</td><td>${esc(g.cat)}</td><td>${esc(g.place)}</td><td>${esc(g.desc)}</td><td>${(g.imgs||[]).length}</td></tr>`).join('')+'</table></body></html>';
-  dl(new Blob(['\ufeff'+h],{type:'application/vnd.ms-excel'}),'รพสต_แจ้ซ้อนเหนือ_ข้อมูล.xls');
+  let h='<html><head><meta charset="UTF-8"></head><body>';
+  $$('.page').forEach(p=>{const ts=p.querySelectorAll('table');if(!ts.length)return;h+='<h3>'+esc(p.querySelector('h2.sec')?.textContent)+'</h3>';ts.forEach(t=>h+=t.outerHTML+'<br>');});
+  dl(new Blob(['\ufeff'+h],{type:'application/vnd.ms-excel'}),'รพสต_แจ้ซ้อนเหนือ.xls');
 }
-function exportHTML(){
-  const c=document.documentElement.cloneNode(true);
-  c.querySelector('#main').innerHTML=snapshot();c.querySelector('#main').setAttribute('contenteditable','false');
-  c.querySelector('body').classList.remove('editing');c.querySelectorAll('.modal,#lb').forEach(m=>m.classList.remove('on'));
-  const old=c.querySelector('#embed');if(old)old.remove();
-  const s=document.createElement('script');s.id='embed';s.textContent='window.EMBED='+JSON.stringify({gallery}).replace(/</g,'\\u003c')+';';
-  c.querySelector('body').insertBefore(s,c.querySelector('#app'));
-  dl(new Blob(['<!DOCTYPE html>\n'+c.outerHTML],{type:'text/html;charset=utf-8'}),'index.html');
-}
-function exportJSON(){dl(new Blob([JSON.stringify({site:snapshot(),gallery,saved:new Date().toISOString()})],{type:'application/json'}),'สำรองข้อมูล_รพสต_'+new Date().toISOString().slice(0,10)+'.json');}
-$('#f-json').onchange=function(){const f=this.files[0];if(!f)return;const r=new FileReader();
-  r.onload=async e=>{try{const j=JSON.parse(e.target.result);const site=j.site||j.html;
-    if(site){main.innerHTML=site;try{localStorage.setItem(LKEY,site)}catch(x){}}
-    if(Array.isArray(j.gallery)){gallery=j.gallery;saveGalleryLocal();}
-    showPage('home');rebind();renderGallery();toast('นำเข้าข้อมูลสำเร็จ');
-    if(canCloud()&&confirm('อัปโหลดข้อมูลที่นำเข้านี้ขึ้นระบบออนไลน์ด้วยหรือไม่? (จะแทนที่ข้อมูลออนไลน์เดิม)')){await migrateImages();saveGalleryLocal(true);await pushCloud({site:snapshot(),gallery});}
-  }catch(x){toast('อ่านไฟล์ไม่สำเร็จ');}};r.readAsText(f);this.value='';};
 
-/* ===== TOOLBAR ===== */
-$('#fab').onclick=()=>{const t=$('#tools');t.style.display=t.style.display==='flex'?'none':'flex';};
+$('#fab').onclick=()=>{$('#tools').style.display=$('#tools').style.display==='flex'?'none':'flex';};
 $('#btn-edit').onclick=()=>setEdit(!editing);
 $('#btn-save').onclick=saveSite;
-$('#btn-pull').onclick=()=>pullFromCloud(false);
-$('#btn-link').onclick=()=>{if(location.protocol==='file:'){toast('ต้องอัปโหลดเว็บขึ้นโฮสต์ก่อน จึงจะมีลิงก์สำหรับแชร์',4000);return;}
-  const u=location.href.split('#')[0];(navigator.clipboard?navigator.clipboard.writeText(u):Promise.reject()).then(()=>toast('🔗 คัดลอกลิงก์แล้ว')).catch(()=>prompt('คัดลอกลิงก์นี้:',u));};
+$('#btn-pull').onclick=pullFromCloud;
 $('#btn-xls').onclick=exportXLS;
 $('#btn-pdf').onclick=()=>window.print();
-$('#btn-html').onclick=exportHTML;
-$('#btn-json').onclick=exportJSON;
-$('#btn-import').onclick=()=>$('#f-json').click();
-$('#btn-reset').onclick=()=>{if(confirm('ล้างข้อมูลที่บันทึกในเครื่องนี้ และกลับไปใช้ข้อมูลตั้งต้น?')){localStorage.removeItem(LKEY);localStorage.removeItem(GKEY);location.reload();}};
-window.addEventListener('beforeunload',e=>{if(dirty||uploading){e.preventDefault();e.returnValue='';}});
-setInterval(()=>{if(dirty){try{localStorage.setItem(LKEY,snapshot());dirty=false;}catch(e){}}},60000);
+$('#btn-json').onclick=()=>dl(new Blob([JSON.stringify({site:snapshot(),gallery})]),'backup.json');
+$('#btn-reset').onclick=()=>{if(confirm('ล้างข้อมูลทั้งหมด?')){localStorage.clear();location.reload();}};
 
-/* ===== START ===== */
 (async function init(){
-  const E=window.EMBED||{};
   const ls=localStorage.getItem(LKEY);if(ls)main.innerHTML=ls;
   let g=null;try{g=JSON.parse(localStorage.getItem(GKEY)||'null')}catch(e){}
-  gallery=Array.isArray(g)?g:(Array.isArray(E.gallery)?E.gallery:SAMPLE.slice());
+  gallery=Array.isArray(g)?g:SAMPLE.slice();
   showPage('home');rebind();renderGallery();setStatus();
   $('#today').textContent=new Date().toLocaleDateString('th-TH',{day:'numeric',month:'long',year:'numeric'});
-  if(cloudOn())await pullFromCloud(false);
+  if(cloudOn())await pullFromCloud();
 })();
 </script>
 </body>
